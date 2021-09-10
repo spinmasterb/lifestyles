@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<style type="text/css">
+    td {
+        padding: 15px 15px 0 0;
+    }
+</style>
+
+@foreach (var service in ViewBag.OperationServices)
+{
+    <div class="row">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2"><h3>@service.GetType().Name</h3></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <strong>Transient</strong>
+                    </td>
+                    <td>
+                        @service.Transient
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>PerWebRequest</strong>
+                    </td>
+                    <td>
+                        @service.PerWebRequest
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+}
